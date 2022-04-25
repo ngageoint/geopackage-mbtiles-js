@@ -15,7 +15,7 @@ $ npm install @ngageoint/geopackage-mbtiles-js
 #### Command Line
 
 ```sh
-./cli /path/to/file/to/convert.json /path/to/file/to/create.gpkg
+./cli /path/to/file/to/convert.mbtiles /path/to/file/to/create.gpkg
 ```
 
 #### Javascript
@@ -23,7 +23,7 @@ $ npm install @ngageoint/geopackage-mbtiles-js
 const { MBTilesToGeoPackage } = require('@ngageoint/geopackage-mbtiles-js');
 const mbTilesFile = './test.mbtiles';
 const geoPackageFile = './test.gpkg';
-const tableName = 'features';
+const tableName = 'tiles';
 
 // Convert MBTiles (Imagery) to GeoPackage tile table
 const converter = new MBTilesToGeoPackage();

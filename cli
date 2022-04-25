@@ -1,0 +1,14 @@
+#!/usr/bin/env node
+var {MBTilesToGeoPackage} = require('./built/index');
+var path = require('path');
+
+console.log('MBTiles to GeoPackage Converter');
+
+var mbtiles = path.resolve(process.cwd(), process.argv[2]);
+var geoPackageFile = path.resolve(process.cwd(), process.argv[3]);
+
+console.log('Converting %s to %s', mbtiles, geoPackageFile);
+new MBTilesToGeoPackage().convert({ mbtiles: mbtiles, geoPackage: geoPackageFile }).then(() => {
+  console.log('File conversion complete');
+  console.log('Converted %s to %s', mbtiles, geoPackageFile);
+});
